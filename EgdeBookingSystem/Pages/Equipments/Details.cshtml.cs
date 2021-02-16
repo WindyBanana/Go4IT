@@ -28,7 +28,10 @@ namespace EgdeBookingSystem.Pages.Equipments
                 return NotFound();
             }
 
-            Equipment = await _context.Equipment.FirstOrDefaultAsync(m => m.ID == id);
+            Equipment = await _context.Equipment
+                .Include(e => e.Category)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.ID == id);
 
             if (Equipment == null)
             {
