@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using EgdeBookingSystem.Data;
 using EgdeBookingSystem.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace EgdeBookingSystem.Pages.Equipments
 {
@@ -14,13 +15,21 @@ namespace EgdeBookingSystem.Pages.Equipments
     {
         private readonly EgdeBookingSystem.Data.ApplicationDbContext _context;
 
+        
+
         public CreateModel(EgdeBookingSystem.Data.ApplicationDbContext context)
         {
             _context = context;
         }
+        public SelectList Categories { get; set; }
 
-        public IActionResult OnGet()
+        public async Task<IActionResult> OnGetAsync()
         {
+            IQueryable<string> categoryQuery = from c in _context.Category
+                                            orderby c.Name
+                                            select c.Name;
+            Categories = new SelectList(await categoryQuery.ToListAsync());
+
             return Page();
         }
 
