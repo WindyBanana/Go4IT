@@ -14,5 +14,6 @@ namespace EgdeBookingSystem.Data
         {
         }
         public DbSet<EgdeBookingSystem.Models.Equipment> Equipment { get; set; }
+        public DbSet<EgdeBookingSystem.Models.Category> Category { get; set; }
     }
 }
