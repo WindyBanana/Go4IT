@@ -23,7 +23,10 @@ namespace EgdeBookingSystem.Pages.Equipments
 
         public async Task OnGetAsync()
         {
-            Equipment = await _context.Equipment.ToListAsync();
+            Equipment = await _context.Equipment
+                .Include(e => e.Category)
+                .AsNoTracking()
+                .ToListAsync();
         }
     }
 }
