@@ -27,7 +27,9 @@
             </div>
             <div class="form-group">
                 <label asp-for="Equipment.Category" class="control-label"></label>
-                <input asp-for="Equipment.Category.Name" class="form-control" />
+                <select asp-for="Equipment.Category" asp-items="Model.Categories">
+                    <option value="">  </option>
+                </select>
                 <span asp-validation-for="Equipment.Category" class="text-danger"></span>
             </div>
             <div class="form-group form-check">

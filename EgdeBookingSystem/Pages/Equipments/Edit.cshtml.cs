@@ -23,6 +23,8 @@ namespace EgdeBookingSystem.Pages.Equipments
         [BindProperty]
         public Equipment Equipment { get; set; }
 
+        public SelectList Categories { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -30,15 +32,18 @@ namespace EgdeBookingSystem.Pages.Equipments
                 return NotFound();
             }
 
-            Equipment = await _context.Equipment
-                .Include(e => e.Category)
-                .AsNoTracking()
-                .FirstOrDefaultAsync(m => m.ID == id);
+            Equipment = await _context.Equipment.AsNoTracking().FirstOrDefaultAsync(m => m.ID == id);
 
             if (Equipment == null)
             {
                 return NotFound();
             }
+
+            IQueryable<string> categoryQuery = from c in _context.Category
+                                               orderby c.Name
+                                               select c.Name;
+            Categories = new SelectList(await categoryQuery.ToListAsync());
+
             return Page();
         }
 

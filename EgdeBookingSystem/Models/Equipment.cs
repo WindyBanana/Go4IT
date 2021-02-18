@@ -11,7 +11,7 @@ namespace EgdeBookingSystem.Models
         public string Name { get; set; }
         public string Info { get; set; }
         public bool Booked { get; set; }
-        public Category Category { get; set; }
+        public String Category { get; set; }
 
     }
 }

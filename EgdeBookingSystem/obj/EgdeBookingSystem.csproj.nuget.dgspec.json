@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Codes\\Repos\\Bachelor\\EgdeBookingSystem\\EgdeBookingSystem.csproj": {}
+    "C:\\Users\\magnu\\source\\repos\\Go4IT\\EgdeBookingSystem\\EgdeBookingSystem.csproj": {}
   },
   "projects": {
-    "F:\\Codes\\Repos\\Bachelor\\EgdeBookingSystem\\EgdeBookingSystem.csproj": {
+    "C:\\Users\\magnu\\source\\repos\\Go4IT\\EgdeBookingSystem\\EgdeBookingSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Codes\\Repos\\Bachelor\\EgdeBookingSystem\\EgdeBookingSystem.csproj",
+        "projectUniqueName": "C:\\Users\\magnu\\source\\repos\\Go4IT\\EgdeBookingSystem\\EgdeBookingSystem.csproj",
         "projectName": "EgdeBookingSystem",
-        "projectPath": "F:\\Codes\\Repos\\Bachelor\\EgdeBookingSystem\\EgdeBookingSystem.csproj",
-        "packagesPath": "C:\\Users\\Kanta\\.nuget\\packages\\",
-        "outputPath": "F:\\Codes\\Repos\\Bachelor\\EgdeBookingSystem\\obj\\",
+        "projectPath": "C:\\Users\\magnu\\source\\repos\\Go4IT\\EgdeBookingSystem\\EgdeBookingSystem.csproj",
+        "packagesPath": "C:\\Users\\magnu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\magnu\\source\\repos\\Go4IT\\EgdeBookingSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Kanta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\magnu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
