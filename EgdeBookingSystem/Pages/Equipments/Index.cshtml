@@ -12,6 +12,12 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form>
+    <p>
+        Title: <input type="text" asp-for="SearchString" placeholder="Search equipment"/>
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -31,7 +37,7 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Equipment) {
+@foreach (var item in Model.EquipmentSearch) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)

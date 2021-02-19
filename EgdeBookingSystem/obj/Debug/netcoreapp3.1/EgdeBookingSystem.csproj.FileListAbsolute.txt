@@ -584,3 +584,4 @@ C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razo
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Categories\Details.cshtml.g.cs
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Categories\Edit.cshtml.g.cs
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Categories\Index.cshtml.g.cs
+C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\EgdeBookingSystem.csprojAssemblyReference.cache

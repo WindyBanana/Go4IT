@@ -19,13 +19,30 @@ namespace EgdeBookingSystem.Pages.Equipments
             _context = context;
         }
 
-        public IList<Equipment> Equipment { get;set; }
+
+        public IList<Equipment> EquipmentSearch { get;set; }
+        public IList<Equipment> Equipment { get; set; }
         public IList<Category> Categories { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
+
 
         public async Task OnGetAsync()
         {
             Equipment = await _context.Equipment.AsNoTracking().ToListAsync();
             Categories = await _context.Category.AsNoTracking().ToListAsync();
+
+            EquipmentSearch = await _context.Equipment.ToListAsync();
+
+            var equipments = from n in _context.Equipment
+                             select n;
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                equipments = equipments.Where(s => s.Name.Contains(SearchString));
+            }
+
+            EquipmentSearch = await equipments.ToListAsync();
         }
     }
 }
