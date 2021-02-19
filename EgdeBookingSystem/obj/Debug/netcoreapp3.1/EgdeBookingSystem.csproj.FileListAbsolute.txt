@@ -60,7 +60,6 @@ C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\bin\Debug\netcoreapp3.1\runt
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\EgdeBookingSystem.csprojAssemblyReference.cache
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\EgdeBookingSystem.AssemblyInfoInputs.cache
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\EgdeBookingSystem.AssemblyInfo.cs
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\EgdeBookingSystem.csproj.CoreCompileInputs.cache
@@ -580,3 +579,8 @@ F:\Codes\Repos\Bachelor\EgdeBookingSystem\obj\Debug\netcoreapp3.1\EgdeBookingSys
 F:\Codes\Repos\Bachelor\EgdeBookingSystem\obj\Debug\netcoreapp3.1\EgdeBookingSystem.dll
 F:\Codes\Repos\Bachelor\EgdeBookingSystem\obj\Debug\netcoreapp3.1\EgdeBookingSystem.pdb
 F:\Codes\Repos\Bachelor\EgdeBookingSystem\obj\Debug\netcoreapp3.1\EgdeBookingSystem.genruntimeconfig.cache
+C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Categories\Create.cshtml.g.cs
+C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Categories\Delete.cshtml.g.cs
+C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Categories\Details.cshtml.g.cs
+C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Categories\Edit.cshtml.g.cs
+C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Categories\Index.cshtml.g.cs
