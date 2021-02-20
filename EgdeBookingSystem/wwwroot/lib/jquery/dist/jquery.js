@@ -130,6 +130,8 @@ var document = window.document;
 	}
 
 
+
+
 function toType( obj ) {
 	if ( obj == null ) {
 		return obj + "";
