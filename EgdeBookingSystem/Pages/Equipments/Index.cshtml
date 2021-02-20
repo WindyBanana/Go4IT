@@ -4,7 +4,12 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "_Layout";
+
+
 }
+
+<script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
+
 
 <div class="text-center">
     <h1 class="display-4">Equipment</h1>
@@ -14,10 +19,11 @@
 </p>
 <form>
     <p>
-        Title: <input type="text" asp-for="SearchString" placeholder="Search equipment"/>
-        <input type="submit" value="Filter" />
+        Name: <input type="text" asp-for="SearchString" placeholder="Search equipment" oninput="this.form.submit();" id="autofocusLastChar"/>
+        @*<input type="submit" value="Filter" />*@
     </p>
 </form>
+
 <table class="table">
     <thead>
         <tr>
@@ -37,26 +43,40 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.EquipmentSearch) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Info)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Booked)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.EquipmentSearch)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Info)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Booked)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<script type="text/javascript">
+    (function ($) {
+        $.fn.focusTextToEnd = function () {
+            this.focus();
+            var $thisVal = this.val();
+            this.val('').val($thisVal);
+            return this;
+        }
+    }(jQuery));
+    $("#autofocusLastChar").focusTextToEnd();
+</script>
+

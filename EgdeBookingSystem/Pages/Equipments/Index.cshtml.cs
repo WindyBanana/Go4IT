@@ -44,5 +44,17 @@ namespace EgdeBookingSystem.Pages.Equipments
 
             EquipmentSearch = await equipments.ToListAsync();
         }
+
+        //protected void Page_Load(object sender, EventArgs e)
+        //{
+
+        //}
+        //protected void TextBox2_TextChanged(object sender, EventArgs e)
+        //{
+        //    int sum = Convert.ToInt32(TextBox1.Text) + Convert.ToInt32(TextBox2.Text);
+        //    lblsum.Text = "The Sum = " + sum.ToString();
+        //    TextBox1.Text = "";
+        //    TextBox2.Text = "";
+        //}
     }
 }
