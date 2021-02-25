@@ -5,14 +5,9 @@ using System.Threading.Tasks;
 
 namespace EgdeBookingSystem.Models
 {
-    public class Equipment
+    public class Location
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public string Info { get; set; }
-        public bool Booked { get; set; }
-        public string Category { get; set; }
-        public string Location { get; set; }
-
     }
 }

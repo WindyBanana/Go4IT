@@ -7,40 +7,25 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using EgdeBookingSystem.Data;
 using EgdeBookingSystem.Models;
-using Microsoft.EntityFrameworkCore;
 
-namespace EgdeBookingSystem.Pages.Equipments
+namespace EgdeBookingSystem.Pages.Locations
 {
     public class CreateModel : PageModel
     {
         private readonly EgdeBookingSystem.Data.ApplicationDbContext _context;
 
-        
-
         public CreateModel(EgdeBookingSystem.Data.ApplicationDbContext context)
         {
             _context = context;
         }
-        public SelectList Categories { get; set; }
-        public SelectList Locations { get; set; }
 
-        public async Task<IActionResult> OnGetAsync()
+        public IActionResult OnGet()
         {
-            IQueryable<string> categoryQuery = from c in _context.Category
-                                            orderby c.Name
-                                            select c.Name;
-            Categories = new SelectList(await categoryQuery.ToListAsync());
-
-            IQueryable<string> locationQuery = from l in _context.Location
-                                               orderby l.Name
-                                               select l.Name;
-            Locations = new SelectList(await locationQuery.ToListAsync());
-
             return Page();
         }
 
         [BindProperty]
-        public Equipment Equipment { get; set; }
+        public Location Location { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -51,7 +36,7 @@ namespace EgdeBookingSystem.Pages.Equipments
                 return Page();
             }
 
-            _context.Equipment.Add(Equipment);
+            _context.Location.Add(Location);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
