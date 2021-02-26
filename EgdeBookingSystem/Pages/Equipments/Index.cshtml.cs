@@ -24,12 +24,16 @@ namespace EgdeBookingSystem.Pages.Equipments
         public IList<Equipment> EquipmentSearch { get;set; }
         public IList<Equipment> Equipment { get; set; }
         public SelectList Categories { get; set; }
+        public SelectList Locations { get; set; }
 
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
 
         [BindProperty(SupportsGet = true)]
         public string CategoryFilter { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string LocationFilter { get; set; }
 
 
 
@@ -42,6 +46,11 @@ namespace EgdeBookingSystem.Pages.Equipments
                                                orderby c.Name
                                                select c.Name;
             Categories = new SelectList(await categoryQuery.ToListAsync());
+
+            IQueryable<string> locationQuery = from l in _context.Location
+                                               orderby l.Name
+                                               select l.Name;
+            Locations = new SelectList(await locationQuery.ToListAsync());
 
 
             // mulig flytte det under her til onpostasync
@@ -57,6 +66,11 @@ namespace EgdeBookingSystem.Pages.Equipments
             if (!string.IsNullOrEmpty(CategoryFilter))
             {
                 equipments = equipments.Where(s => s.Category.Contains(CategoryFilter));
+            }
+
+            if (!string.IsNullOrEmpty(LocationFilter))
+            {
+                equipments = equipments.Where(s => s.Location.Contains(LocationFilter));
             }
 
             EquipmentSearch = await equipments.ToListAsync();

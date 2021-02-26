@@ -23,7 +23,13 @@
     </p>
     <p>
         <label class="control-label"></label>
-        <select asp-for="CategoryFilter" asp-items="Model.Categories" oninput="this.form.submit();" >
+        <select asp-for="CategoryFilter" asp-items="Model.Categories" oninput="this.form.submit();">
+            <option value="">  </option>
+        </select>
+    </p>
+    <p>
+        <label class="control-label"></label>
+        <select asp-for="LocationFilter" asp-items="Model.Locations" oninput="this.form.submit();">
             <option value="">  </option>
         </select>
     </p>
