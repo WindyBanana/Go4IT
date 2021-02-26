@@ -33,6 +33,12 @@
             <option value="">  </option>
         </select>
     </p>
+    <p>
+        <label class="control-label"></label>
+        <select asp-for="BookedFilter" asp-items="Model.Status" oninput="this.form.submit();">
+            <option value="">  </option>
+        </select>
+    </p>
 
 </form>
 
