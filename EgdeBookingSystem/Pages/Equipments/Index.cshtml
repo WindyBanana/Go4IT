@@ -19,9 +19,15 @@
 </p>
 <form>
     <p>
-        Name: <input type="text" asp-for="SearchString" placeholder="Search equipment" oninput="this.form.submit();" id="autofocusLastChar"/>
-        @*<input type="submit" value="Filter" />*@
+        Name: <input type="text" asp-for="SearchString" placeholder="Search equipment" oninput="this.form.submit();" id="autofocusLastChar" />
     </p>
+    <p>
+        <label class="control-label"></label>
+        <select asp-for="CategoryFilter" asp-items="Model.Categories" oninput="this.form.submit();" >
+            <option value="">  </option>
+        </select>
+    </p>
+
 </form>
 
 <table class="table">

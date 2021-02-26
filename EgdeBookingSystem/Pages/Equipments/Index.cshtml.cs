@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using EgdeBookingSystem.Data;
 using EgdeBookingSystem.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace EgdeBookingSystem.Pages.Equipments
 {
@@ -22,17 +23,28 @@ namespace EgdeBookingSystem.Pages.Equipments
 
         public IList<Equipment> EquipmentSearch { get;set; }
         public IList<Equipment> Equipment { get; set; }
-        public IList<Category> Categories { get; set; }
+        public SelectList Categories { get; set; }
 
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
 
+        [BindProperty(SupportsGet = true)]
+        public string CategoryFilter { get; set; }
+
+
 
         public async Task OnGetAsync()
         {
-            Equipment = await _context.Equipment.AsNoTracking().ToListAsync();
-            Categories = await _context.Category.AsNoTracking().ToListAsync();
 
+            Equipment = await _context.Equipment.AsNoTracking().ToListAsync();
+
+            IQueryable<string> categoryQuery = from c in _context.Category
+                                               orderby c.Name
+                                               select c.Name;
+            Categories = new SelectList(await categoryQuery.ToListAsync());
+
+
+            // mulig flytte det under her til onpostasync
             EquipmentSearch = await _context.Equipment.ToListAsync();
 
             var equipments = from n in _context.Equipment
@@ -42,7 +54,13 @@ namespace EgdeBookingSystem.Pages.Equipments
                 equipments = equipments.Where(s => s.Name.Contains(SearchString));
             }
 
+            if (!string.IsNullOrEmpty(CategoryFilter))
+            {
+                equipments = equipments.Where(s => s.Category.Contains(CategoryFilter));
+            }
+
             EquipmentSearch = await equipments.ToListAsync();
         }
+
     }
 }
