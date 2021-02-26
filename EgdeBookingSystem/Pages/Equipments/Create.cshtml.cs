@@ -22,6 +22,7 @@ namespace EgdeBookingSystem.Pages.Equipments
             _context = context;
         }
         public SelectList Categories { get; set; }
+        public SelectList Locations { get; set; }
 
         public async Task<IActionResult> OnGetAsync()
         {
@@ -29,6 +30,11 @@ namespace EgdeBookingSystem.Pages.Equipments
                                             orderby c.Name
                                             select c.Name;
             Categories = new SelectList(await categoryQuery.ToListAsync());
+
+            IQueryable<string> locationQuery = from l in _context.Location
+                                               orderby l.Name
+                                               select l.Name;
+            Locations = new SelectList(await locationQuery.ToListAsync());
 
             return Page();
         }
