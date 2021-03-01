@@ -1,18 +1,14 @@
-﻿@page "/Equipment"
-@model EgdeBookingSystem.Pages.Equipments.IndexModel
+﻿@page
+@model EgdeBookingSystem.Pages.UserView.IndexModel
 
 @{
     ViewData["Title"] = "Index";
     Layout = "_Layout";
-
-
 }
 
 <script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
-<h2>Admin View:</h2>
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
+
+<h2>User View:</h2>
 <form>
     <p>
         Name: <input type="text" asp-for="SearchString" placeholder="Search equipment" oninput="this.form.submit();" id="autofocusLastChar" />
@@ -45,9 +41,6 @@
                 @Html.DisplayNameFor(model => model.Equipment[0].Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Equipment[0].Info)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Equipment[0].Category)
             </th>
             <th>
@@ -62,28 +55,23 @@
     <tbody>
         @foreach (var item in Model.EquipmentSearch)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Info)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Booked)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Booked)
+                </td>
+                <td>
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                </td>
+            </tr>
         }
     </tbody>
 </table>
@@ -99,4 +87,3 @@
     }(jQuery));
     $("#autofocusLastChar").focusTextToEnd();
 </script>
-
