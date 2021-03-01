@@ -182,7 +182,6 @@ C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\bin\Debug\netcoreapp3.1\runt
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
-C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Calendar\Index.cshtml.g.cs
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Equipments\Create.cshtml.g.cs
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Equipments\Delete.cshtml.g.cs
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Equipments\Details.cshtml.g.cs
@@ -590,3 +589,5 @@ C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razo
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Locations\Details.cshtml.g.cs
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Locations\Edit.cshtml.g.cs
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Locations\Index.cshtml.g.cs
+C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\UserView\Details.cshtml.g.cs
+C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\UserView\Index.cshtml.g.cs
