@@ -6,16 +6,13 @@
     Layout = "_Layout";
 }
 
-<h1>Index</h1>
+<h1>All Bookings</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Booking[0].UserID)
+                @Html.DisplayNameFor(model => model.Booking[0].UserEmail)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Booking[0].EquipmentID)
@@ -33,7 +30,7 @@
 @foreach (var item in Model.Booking) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.UserID)
+                @Html.DisplayFor(modelItem => item.UserEmail)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.EquipmentID)

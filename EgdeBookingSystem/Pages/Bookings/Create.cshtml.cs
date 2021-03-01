@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using EgdeBookingSystem.Data;
 using EgdeBookingSystem.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace EgdeBookingSystem.Pages.Bookings
 {
@@ -19,8 +20,23 @@ namespace EgdeBookingSystem.Pages.Bookings
             _context = context;
         }
 
-        public IActionResult OnGet()
+        [BindProperty]
+        public Equipment Equipment { get; set; }
+
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            Equipment = await _context.Equipment.AsNoTracking().FirstOrDefaultAsync(m => m.ID == id);
+
+            if (Equipment == null)
+            {
+                return NotFound();
+            }
+
             return Page();
         }
 

@@ -55,23 +55,27 @@
     <tbody>
         @foreach (var item in Model.EquipmentSearch)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Location)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Booked)
-                </td>
-                <td>
-                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Booked)
+            </td>
+            <td>
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+            </td>
+            <td>
+                <a asp-page="/Bookings/Create" asp-route-id="@item.ID">Book Now!</a> |
+            </td>
+
+        </tr>
         }
     </tbody>
 </table>

@@ -8,7 +8,7 @@ namespace EgdeBookingSystem.Models
     public class Booking
     {
         public int ID { get; set; }
-        public int UserID { get; set; }
+        public string UserEmail { get; set; }
         public int EquipmentID { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
