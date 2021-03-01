@@ -591,3 +591,4 @@ C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razo
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Locations\Index.cshtml.g.cs
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\UserView\Details.cshtml.g.cs
 C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\UserView\Index.cshtml.g.cs
+C:\Users\magnu\source\repos\Go4IT\EgdeBookingSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Calendar\Index.cshtml.g.cs
