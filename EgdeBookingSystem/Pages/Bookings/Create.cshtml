@@ -6,6 +6,12 @@
     Layout = "_Layout";
 }
 
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
 <h4>Book @Model.Equipment.Name</h4>
 
 <div>
@@ -38,37 +44,54 @@
     </dl>
 </div>
 
-    <div class="row">
-        <div class="col-md-4">
-            <form method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <input asp-for="Booking.UserEmail" value="@User.Identity.Name" class="form-control" readonly hidden />
-                </div>
-                <div class="form-group">
-                    <input asp-for="Booking.EquipmentID" value="@Model.Equipment.ID" class="form-control" readonly hidden />
-                </div>
-                <div class="form-group">
-                    <label asp-for="Booking.StartDate" class="control-label"></label>
-                    <input asp-for="Booking.StartDate" class="form-control" />
-                    <span asp-validation-for="Booking.StartDate" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Booking.EndDate" class="control-label"></label>
-                    <input asp-for="Booking.EndDate" class="form-control" />
-                    <span asp-validation-for="Booking.EndDate" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
-                </div>
-            </form>
-        </div>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="Booking.UserEmail" value="@User.Identity.Name" class="form-control" readonly hidden />
+            </div>
+            <div class="form-group">
+                <input asp-for="Booking.EquipmentID" value="@Model.Equipment.ID" class="form-control" readonly hidden />
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.StartDate" class="control-label"></label>
+                <input asp-for="Booking.StartDate" class="form-control" />
+                <span asp-validation-for="Booking.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.EndDate" class="control-label"></label>
+                <input asp-for="Booking.EndDate" class="form-control" />
+                <span asp-validation-for="Booking.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="text" name="daterange"/>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
+</div>
 
-    <div>
-        <a asp-page="Index">Back to List</a>
-    </div>
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
 
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script type="text/javascript">
+
+    $(('input[name="daterange"]')).daterangepicker({
+        "autoApply": true,
+        "linkedCalendars": false,
+        "showCustomRangeLabel": false,
+        "startDate": "@DateTime.Now",
+        "endDate": "@DateTime.Now",
+        "drops": "auto"
+    }, function (start, end, label) {
+        console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+    });
+</script>
