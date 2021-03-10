@@ -77,14 +77,12 @@
 <div>
     <a asp-page="Index">Back to List</a>
 </div>
+<h4>Current bookings of equipment:</h4>
     <table class="table">
         <thead>
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.Bookings[0].UserEmail)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Bookings[0].EquipmentID)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Bookings[0].StartDate)
@@ -98,15 +96,12 @@
         </thead>  
         <tbody>
             @foreach (var item in Model.Bookings)
-                if (item.EquipmentID == Model.Equipment.ID) 
             { 
+                if (item.EquipmentID == Model.Equipment.ID)
                 {
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.UserEmail)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.EquipmentID)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.StartDate)
@@ -114,19 +109,11 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.EndDate)
                         </td>
-                        <td>
-                            <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                            <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                            <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-                        </td>
                     </tr>
-                    }
-                }
+                 }
+             }
         </tbody>
     </table>
-
-
-
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
