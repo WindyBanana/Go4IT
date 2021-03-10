@@ -23,6 +23,8 @@ namespace EgdeBookingSystem.Pages.Bookings
         [BindProperty]
         public Equipment Equipment { get; set; }
 
+        public IList<Booking> Bookings { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -36,6 +38,9 @@ namespace EgdeBookingSystem.Pages.Bookings
             {
                 return NotFound();
             }
+
+
+            Bookings = await _context.Booking.ToListAsync();
 
             return Page();
         }
