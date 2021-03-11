@@ -39,7 +39,6 @@ namespace EgdeBookingSystem.Pages.Bookings
                 return NotFound();
             }
 
-
             Bookings = await _context.Booking.ToListAsync();
 
             return Page();
@@ -55,6 +54,26 @@ namespace EgdeBookingSystem.Pages.Bookings
             if (!ModelState.IsValid)
             {
                 return Page();
+            }
+
+            Bookings = await _context.Booking.ToListAsync();
+
+            if (Bookings != null)
+            {
+                foreach (Booking b in Bookings)
+                {
+                    if (b.EquipmentID == Booking.EquipmentID)
+                    {
+                        if (((Booking.StartDate < b.StartDate) && (Booking.EndDate <= b.StartDate)) || ((Booking.StartDate >= b.EndDate) && (Booking.EndDate > b.EndDate)))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            return Page();
+                        }
+                    }
+                }
             }
 
             _context.Booking.Add(Booking);
