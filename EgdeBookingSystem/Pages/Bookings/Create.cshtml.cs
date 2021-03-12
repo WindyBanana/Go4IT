@@ -39,7 +39,7 @@ namespace EgdeBookingSystem.Pages.Bookings
                 return NotFound();
             }
 
-            Bookings = await _context.Booking.ToListAsync();
+            Bookings = await _context.Booking.Where(b => b.EquipmentID == id).OrderBy(b => b.StartDate).ToListAsync();
 
             return Page();
         }
@@ -49,14 +49,14 @@ namespace EgdeBookingSystem.Pages.Bookings
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int? id)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            Bookings = await _context.Booking.ToListAsync();
+            Bookings = await _context.Booking.Where(b => b.EquipmentID == id).OrderBy(b => b.StartDate).ToListAsync();
 
             if (Bookings != null)
             {

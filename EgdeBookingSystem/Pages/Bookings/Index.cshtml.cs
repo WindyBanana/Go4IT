@@ -23,7 +23,7 @@ namespace EgdeBookingSystem.Pages.Bookings
 
         public async Task OnGetAsync()
         {
-            Booking = await _context.Booking.ToListAsync();
+            Booking = await _context.Booking.OrderBy(b => b.StartDate).ToListAsync();
         }
     }
 }
