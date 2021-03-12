@@ -23,6 +23,8 @@ namespace EgdeBookingSystem.Pages.Bookings
         [BindProperty]
         public Equipment Equipment { get; set; }
 
+        public IList<Booking> Bookings { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -37,6 +39,8 @@ namespace EgdeBookingSystem.Pages.Bookings
                 return NotFound();
             }
 
+            Bookings = await _context.Booking.Where(b => b.EquipmentID == id).OrderBy(b => b.StartDate).ToListAsync();
+
             return Page();
         }
 
@@ -45,11 +49,31 @@ namespace EgdeBookingSystem.Pages.Bookings
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int? id)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
+            }
+
+            Bookings = await _context.Booking.Where(b => b.EquipmentID == id).OrderBy(b => b.StartDate).ToListAsync();
+
+            if (Bookings != null)
+            {
+                foreach (Booking b in Bookings)
+                {
+                    if (b.EquipmentID == Booking.EquipmentID)
+                    {
+                        if (((Booking.StartDate < b.StartDate) && (Booking.EndDate <= b.StartDate)) || ((Booking.StartDate >= b.EndDate) && (Booking.EndDate > b.EndDate)))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            return Page();
+                        }
+                    }
+                }
             }
 
             _context.Booking.Add(Booking);
