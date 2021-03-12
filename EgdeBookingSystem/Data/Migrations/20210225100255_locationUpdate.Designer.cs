@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EgdeBookingSystem.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(EgdeBookingSystemContext))]
     [Migration("20210225100255_locationUpdate")]
     partial class locationUpdate
     {

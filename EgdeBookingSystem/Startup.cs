@@ -27,11 +27,16 @@ namespace EgdeBookingSystem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            // Database connection string.
+            // Make sure to update the Password value below from "your_password" to your actual password.
+            var connection = @"Server=db;Catalog=EgdeBookingSystemContext;Database=EgdeBookingSystemContext;User=sa;Password=Password123@;";
+
+            services.AddDbContext<EgdeBookingSystemContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("DBConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<EgdeBookingSystemContext>()
+                .AddDefaultTokenProviders();
             services.AddRazorPages();
         }
 

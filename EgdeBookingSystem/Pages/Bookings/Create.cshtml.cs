@@ -13,9 +13,9 @@ namespace EgdeBookingSystem.Pages.Bookings
 {
     public class CreateModel : PageModel
     {
-        private readonly EgdeBookingSystem.Data.ApplicationDbContext _context;
+        private readonly EgdeBookingSystem.Data.EgdeBookingSystemContext _context;
 
-        public CreateModel(EgdeBookingSystem.Data.ApplicationDbContext context)
+        public CreateModel(EgdeBookingSystem.Data.EgdeBookingSystemContext context)
         {
             _context = context;
         }

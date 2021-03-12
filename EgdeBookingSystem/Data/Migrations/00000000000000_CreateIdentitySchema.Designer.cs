@@ -9,7 +9,7 @@ using System;
 
 namespace EgdeBookingSystem.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(EgdeBookingSystemContext))]
     [Migration("00000000000000_CreateIdentitySchema")]
     partial class CreateIdentitySchema
     {

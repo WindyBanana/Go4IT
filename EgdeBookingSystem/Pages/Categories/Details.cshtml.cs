@@ -12,9 +12,9 @@ namespace EgdeBookingSystem.Pages.Categories
 {
     public class DetailsModel : PageModel
     {
-        private readonly EgdeBookingSystem.Data.ApplicationDbContext _context;
+        private readonly EgdeBookingSystem.Data.EgdeBookingSystemContext _context;
 
-        public DetailsModel(EgdeBookingSystem.Data.ApplicationDbContext context)
+        public DetailsModel(EgdeBookingSystem.Data.EgdeBookingSystemContext context)
         {
             _context = context;
         }

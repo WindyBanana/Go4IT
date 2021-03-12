@@ -7,9 +7,9 @@ using EgdeBookingSystem.Models;
 
 namespace EgdeBookingSystem.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class EgdeBookingSystemContext : IdentityDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public EgdeBookingSystemContext(DbContextOptions<EgdeBookingSystemContext> options)
             : base(options)
         {
         }

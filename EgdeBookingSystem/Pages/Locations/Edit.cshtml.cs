@@ -13,9 +13,9 @@ namespace EgdeBookingSystem.Pages.Locations
 {
     public class EditModel : PageModel
     {
-        private readonly EgdeBookingSystem.Data.ApplicationDbContext _context;
+        private readonly EgdeBookingSystem.Data.EgdeBookingSystemContext _context;
 
-        public EditModel(EgdeBookingSystem.Data.ApplicationDbContext context)
+        public EditModel(EgdeBookingSystem.Data.EgdeBookingSystemContext context)
         {
             _context = context;
         }

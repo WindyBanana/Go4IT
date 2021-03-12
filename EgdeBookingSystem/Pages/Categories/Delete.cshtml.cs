@@ -12,9 +12,9 @@ namespace EgdeBookingSystem.Pages.Categories
 {
     public class DeleteModel : PageModel
     {
-        private readonly EgdeBookingSystem.Data.ApplicationDbContext _context;
+        private readonly EgdeBookingSystem.Data.EgdeBookingSystemContext _context;
 
-        public DeleteModel(EgdeBookingSystem.Data.ApplicationDbContext context)
+        public DeleteModel(EgdeBookingSystem.Data.EgdeBookingSystemContext context)
         {
             _context = context;
         }
