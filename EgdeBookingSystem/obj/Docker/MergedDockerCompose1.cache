@@ -1,4 +1,11 @@
 services:
+  db:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: Password123@
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    ports:
+    - target: 1433
   egdebookingsystem:
     build:
       context: C:\Users\nerga\Bachelor\Go4IT\EgdeBookingSystem
@@ -8,6 +15,9 @@ services:
         com.microsoft.visual-studio.project-name: EgdeBookingSystem
       target: base
     container_name: EgdeBookingSystem
+    depends_on:
+      db:
+        condition: service_started
     entrypoint: tail -f /dev/null
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -23,6 +33,8 @@ services:
       com.microsoft.visualstudio.debuggee.program: dotnet
       com.microsoft.visualstudio.debuggee.workingdirectory: /app
     ports:
+    - published: 5000
+      target: 80
     - target: 80
     - target: 443
     tty: true

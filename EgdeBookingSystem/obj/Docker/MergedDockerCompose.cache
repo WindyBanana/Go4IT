@@ -1,13 +1,25 @@
 services:
+  db:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: Password123@
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    ports:
+    - target: 1433
   egdebookingsystem:
     build:
       context: C:\Users\nerga\Bachelor\Go4IT\EgdeBookingSystem
       dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_started
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
     image: egdebookingsystem
     ports:
+    - published: 5000
+      target: 80
     - target: 80
     - target: 443
     volumes:

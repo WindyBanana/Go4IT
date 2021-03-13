@@ -29,7 +29,7 @@ namespace EgdeBookingSystem
         {
             // Database connection string.
             // Make sure to update the Password value below from "your_password" to your actual password.
-            var connection = @"Server=db;Catalog=EgdeBookingSystemContext;Database=EgdeBookingSystemContext;User=sa;Password=Password123@;";
+          //  var connection = @"Server=db;Catalog=EgdeBookingSystemContext;Database=EgdeBookingSystemContext;User=sa;Password=Password123@;";
 
             services.AddDbContext<EgdeBookingSystemContext>(options =>
                 options.UseSqlServer(
@@ -39,6 +39,13 @@ namespace EgdeBookingSystem
                 .AddDefaultTokenProviders();
             services.AddRazorPages();
         }
+        //public void ApplyMigrations(EgdeBookingSystemContext context)
+        //{
+        //    if (context.Database.GetPendingMigrations().Any())
+        //    {
+        //        context.Database.Migrate();
+        //    }
+        //}
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

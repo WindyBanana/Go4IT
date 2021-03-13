@@ -31,3 +31,6 @@ C:\Users\nerga\Bachelor\Go4IT\EgdeBookingSystem\bin\Debug\EgdeBookingSystem.pdb
 C:\Users\nerga\Bachelor\Go4IT\EgdeBookingSystem\obj\Debug\docker-compose.dcprojAssemblyReference.cache
 C:\Users\nerga\Bachelor\Go4IT\EgdeBookingSystem\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Users\nerga\Bachelor\Go4IT\EgdeBookingSystem\obj\Debug\docker-compose.dcproj.CopyComplete
+C:\Users\nerga\Bachelor\Go4IT\EgdeBookingSystem\bin\Debug\Microsoft.Extensions.Configuration.UserSecrets.dll
+C:\Users\nerga\Bachelor\Go4IT\EgdeBookingSystem\bin\Debug\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\nerga\Bachelor\Go4IT\EgdeBookingSystem\bin\Debug\Microsoft.Extensions.Hosting.dll
