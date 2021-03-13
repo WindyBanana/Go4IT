@@ -33,7 +33,7 @@ namespace EgdeBookingSystem
 
             services.AddDbContext<EgdeBookingSystemContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DBConnection")));
+                    Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<EgdeBookingSystemContext>()
                 .AddDefaultTokenProviders();
